@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Saruto — Web Design, AI & Branding</title>
+
+  <meta
+    name="description"
+    content="Saruto creates modern websites, AI-powered digital experiences, website redesigns, and brand identities for businesses."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .nav-link {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .nav-link:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 110px 0 90px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(56,189,248,0.35);
+      border-radius: 999px;
+      color: #38bdf8;
+      font-size: 13px;
+      margin-bottom: 24px;
+      background: rgba(56,189,248,0.06);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .gradient {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      background: #38bdf8;
+      color: #06111f;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border: 1px solid #334155;
+      color: #e2e8f0;
+    }
+
+    .button-secondary:hover {
+      border-color: #38bdf8;
+    }
+
+    /* PROJECTS */
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #0d1a2b;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .card-number {
+      color: #38bdf8;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .card h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #94a3b8;
+      margin-bottom: 22px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #162438;
+      color: #cbd5e1;
+    }
+
+    .project-link {
+      color: #38bdf8;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service {
+      background: #0d1a2b;
+      border: 1px solid #1e293b;
+      padding: 22px;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .service h3 {
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+
+    .service p {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      background: #0b1728;
+      border-top: 1px solid #1e293b;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .contact p {
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding: 80px 0 60px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">SARUTO</div>
+
+      <a href="#contact" class="nav-link">
+        Let's Work Together →
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+    <div class="container">
+
+      <div class="badge">
+        WEB DESIGN • AI • BRANDING
+      </div>
+
+      <h1>
+        Digital experiences<br>
+        built for <span class="gradient">modern businesses.</span>
+      </h1>
+
+      <p>
+        I design modern websites, AI-powered experiences,
+        website redesigns, and professional brand identities
+        that help businesses present themselves online.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="button button-primary">
+          View My Work
+        </a>
+
+        <a href="#contact" class="button button-secondary">
+          Start a Project
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Selected Work</h2>
+        <p>A selection of projects I've designed and built.</p>
+      </div>
+
+      <div class="projects">
+
+        <!-- NEXORA -->
+
+        <article class="card">
+          <div class="card-number">01 / WEBSITE</div>
+
+          <h3>NEXORA AI</h3>
+
+          <p>
+            A modern AI-focused business website designed
+            with a clean enterprise-style interface and
+            responsive layouts.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Web Design</span>
+            <span class="tag">AI</span>
+            <span class="tag">Responsive</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/HaloSaruto33/nexora-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project →
+          </a>
+        </article>
+
+
+        <!-- VELORA -->
+
+        <article class="card">
+          <div class="card-number">02 / REDESIGN</div>
+
+          <h3>VELORA LIVING</h3>
+
+          <p>
+            A modern furniture website redesign focused on
+            visual presentation, product discovery, and
+            a polished responsive experience.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Redesign</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Responsive</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/HaloSaruto33/velora-living"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project →
+          </a>
+        </article>
+
+
+        <!-- AUREN -->
+
+        <article class="card">
+          <div class="card-number">03 / BRANDING</div>
+
+          <h3>AUREN</h3>
+
+          <p>
+            A modern skincare brand identity featuring a
+            cohesive visual direction, typography system,
+            color palette, and brand guidelines.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Brand Identity</span>
+            <span class="tag">Style Guide</span>
+            <span class="tag">Visual Design</span>
+          </div>
+
+          <span class="project-link">
+            Branding Project
+          </span>
+        </article>
+
+
+        <!-- ORBIT -->
+
+        <article class="card">
+          <div class="card-number">04 / AI PRODUCT</div>
+
+          <h3>ORBIT AI</h3>
+
+          <p>
+            An AI-powered customer-support chatbot concept
+            designed to answer business questions and guide
+            customers through support flows.
+          </p>
+
+          <div class="tags">
+            <span class="tag">AI Chatbot</span>
+            <span class="tag">React</span>
+            <span class="tag">Gemini</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/HaloSaruto33/orbit-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project →
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>What I Do</h2>
+        <p>Services for businesses that want a stronger digital presence.</p>
+      </div>
+
+      <div class="services">
+
+        <div class="service">
+          <h3>Websites</h3>
+          <p>Modern responsive business websites.</p>
+        </div>
+
+        <div class="service">
+          <h3>Redesigns</h3>
+          <p>Modern UI/UX for existing websites.</p>
+        </div>
+
+        <div class="service">
+          <h3>AI Solutions</h3>
+          <p>AI-powered digital experiences and chatbots.</p>
+        </div>
+
+        <div class="service">
+          <h3>Branding</h3>
+          <p>Professional visual identities and style guides.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <h2>Have a project in mind?</h2>
+
+      <p>
+        I'm available for website design, redesign,
+        AI, and branding projects.
+      </p>
+
+      <a
+        href="https://www.fiverr.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button button-primary"
+      >
+        Hire Me on Fiverr →
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      © 2026 Saruto. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
